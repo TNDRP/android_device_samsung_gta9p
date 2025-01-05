@@ -1,10 +1,10 @@
 # mount point	fstype		device			device2			flags
 # Symlinked partitions
-/system_image           emmc	/dev/block/bootdevice/by-name/system            flags=backup=0;flashimg;display="System Image"
-/vendor_image           emmc	/dev/block/bootdevice/by-name/vendor            flags=backup=0;flashimg;display="Vendor Image"
-/product_image          emmc	/dev/block/bootdevice/by-name/product           flags=backup=0;flashimg;display="Product Image"
-/odm_image              emmc	/dev/block/bootdevice/by-name/odm               flags=backup=0;flashimg;display="Odm Image"
-/system_ext_image       emmc	/dev/block/bootdevice/by-name/system_ext        flags=backup=0;flashimg;display="System_EXT Image"
+/system           erofs	/dev/block/mapper/system            flags=backup=0;display="System Image";first_stage_mount
+/vendor           erofs	/dev/block/mapper/vendor            flags=backup=0;display="Vendor Image";first_stage_mount
+/product          erofs	/dev/block/mapper/product           flags=backup=0;display="Product Image";first_stage_mount
+/odm              erofs	/dev/block/mapper/odm               flags=backup=0;display="Odm Image";first_stage_mount
+/system_ext       erofs	/dev/block/mapper/system_ext        flags=backup=0;display="System_EXT Image";first_stage_mount
 
 # Physical partitions
 /metadata       ext4		/dev/block/bootdevice/by-name/metadata              flags=backup=1;wipeingui;display="Metadata"
