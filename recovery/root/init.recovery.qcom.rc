@@ -29,6 +29,8 @@ import /init.recovery.display.rc
 
 on init
     setprop prepdecrypt.setpatch true
+    # mount /vendor
+    mount_all /system/etc/secondary.fstab --early
 
 on boot
     start health-hal-2-1
@@ -41,8 +43,6 @@ on fs
     mount vfat /dev/block/bootdevice/by-name/apnhlos /vendor/firmware_mnt
     # ANDROID_ROOT
     export ANDROID_ROOT /system_root
-    # Mount RW partitions which need run fsck
-    mount_all /vendor/etc/fstab.${ro.boot.hardware.platform} --late
 
 on post-fs
     mkdir /mnt/vendor/efs/DAK 0775 root root
