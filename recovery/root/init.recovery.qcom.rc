@@ -30,7 +30,7 @@ import /init.recovery.display.rc
 on init
     setprop prepdecrypt.setpatch true
     # mount /vendor
-    mount_all /system/etc/secondary.fstab --early
+    exec u:r:recovery:s0 -- /system/bin/mount.sh
 
 on boot
     start health-hal-2-1
