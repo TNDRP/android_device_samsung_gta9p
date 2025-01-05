@@ -37,7 +37,7 @@ on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     # Mount Vendor before TWRP
-    mount ext4 /dev/block/by-name/vendor /vendor
+    mount ext4 /dev/block/mapper/vendor /vendor
     # Mount firmware
     mkdir /vendor/firmware_mnt
     mount vfat /dev/block/bootdevice/by-name/apnhlos /vendor/firmware_mnt
