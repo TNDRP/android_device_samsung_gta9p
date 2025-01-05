@@ -5,4 +5,4 @@ Build your first custom recovery from TeamWin Recovery Project.
     git clone https://github.com/TNDRP/android_device_samsung_gta9p.git -b twrp-12.1 device/samsung/gta9p
 
 # Build
-    Enter Cmd
+    export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch twrp_a05s-eng; mka recoveryimage
