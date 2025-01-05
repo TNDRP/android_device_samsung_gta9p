@@ -30,6 +30,10 @@ import /init.recovery.display.rc
 on init
     setprop prepdecrypt.setpatch true
 
+    # load modules
+    insmod /vendor/lib/modules/hx9036.ko
+    insmod /vendor/lib/modules/hx9023s.ko
+    setprop twrp.modules.loaded true
 on boot
     start health-hal-2-1
 
