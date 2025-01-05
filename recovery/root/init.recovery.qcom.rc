@@ -34,6 +34,7 @@ on init
     insmod /vendor/lib/modules/hx9036.ko
     insmod /vendor/lib/modules/hx9023s.ko
     setprop twrp.modules.loaded true
+
 on boot
     start health-hal-2-1
 
