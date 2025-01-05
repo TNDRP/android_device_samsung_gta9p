@@ -4,3 +4,5 @@ q6_dlkm.ko
 q6_notifier_dlkm.ko
 q6_pdr_dlkm.ko
 snd_event_dlkm.ko
+hx9036.ko
+hx9023s.ko
