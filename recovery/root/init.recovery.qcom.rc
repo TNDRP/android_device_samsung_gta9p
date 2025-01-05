@@ -29,8 +29,6 @@ import /init.recovery.display.rc
 
 on init
     setprop prepdecrypt.setpatch true
-    # Mount Vendor
-    start mount
 
 on boot
     start health-hal-2-1
@@ -49,6 +47,9 @@ on post-fs
     restorecon -R /mnt/vendor/efs/DAK
     chown root root /mnt/vendor/efs/DAK/gakkeybox
     chmod 0644 /mnt/vendor/efs/DAK/gakkeybox
+
+  # Mount Vendor
+    start mount
 
 on post-fs-data
     mkdir /data/vendor/keymaster 0775 root root
