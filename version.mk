@@ -1,2 +1,2 @@
 # Should be included in BoardConfig.mk
-TW_DEVICE_VERSION := CDC-003
+TW_DEVICE_VERSION := CDC-004
