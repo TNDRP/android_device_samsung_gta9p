@@ -31,7 +31,7 @@ on init
     setprop prepdecrypt.setpatch true
 
 # Modules
-on boot
+on init
     mkdir /lib/modules 0755 root root
     chmod 0644 /lib/modules/*
 $(for module in $(ls recovery/root/lib/modules/*.ko); do echo "    insmod /lib/modules/$(basename $module)"; done)
