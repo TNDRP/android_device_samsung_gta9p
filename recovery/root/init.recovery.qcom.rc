@@ -30,10 +30,11 @@ import /init.recovery.display.rc
 on init
     setprop prepdecrypt.setpatch true
 
-    # load modules
-    insmod /vendor/lib/modules/hx9036.ko
-    insmod /vendor/lib/modules/hx9023s.ko
-    setprop twrp.modules.loaded true
+# Modules
+on boot
+    mkdir /lib/modules 0755 root root
+    chmod 0644 /lib/modules/*
+$(for module in $(ls recovery/root/lib/modules/*.ko); do echo "    insmod /lib/modules/$(basename $module)"; done)
 
 on boot
     start health-hal-2-1
